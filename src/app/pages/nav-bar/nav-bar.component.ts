@@ -11,6 +11,10 @@ export class NavBarComponent implements OnInit {
     {
       title: 'Página inicial',
       route: 'home'
+    },
+    {
+      title: 'Pagina inicial',
+      route: 'home'
     }
   ];
 

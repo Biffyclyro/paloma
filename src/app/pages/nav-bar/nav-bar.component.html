@@ -1,5 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark " >
 
+  <a class="navbar-brand " href="/"><img th:src="@{/img/iconBranco.png}" alt=""> Paloma</a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -8,9 +9,9 @@
   <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
     <ul class="navbar-nav">
 
-    <!--  <li class="nav-item" *ngFor="let l of links">
+      <li class="nav-item" *ngFor="let l of links">
         <a class="nav-link" routerLink="{{'pages/' + l.route}}" routerLinkActive="btn active btn-primary" >{{ l.title}}</a>
-      </li>-->
+      </li>
 
     </ul>
   </div>
