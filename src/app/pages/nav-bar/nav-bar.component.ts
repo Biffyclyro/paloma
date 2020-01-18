@@ -9,6 +9,7 @@ export class NavBarComponent implements OnInit {
 
   links: {title: string, route: string} [] = [
     {
+
       title: 'Página inicial',
       route: 'home'
     },
@@ -19,6 +20,10 @@ export class NavBarComponent implements OnInit {
     {
       title: 'Vídeos',
       route: 'videos'
+    },
+    {
+      title: 'Contato',
+      route: 'dahpodhsaopd',
     }
   ];
 
