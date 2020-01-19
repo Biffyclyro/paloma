@@ -8,10 +8,11 @@ import { VideosComponent } from './videos/videos.component';
 import { BioComponent } from './bio/bio.component';
 import { BioEspComponent } from './bio-esp/bio-esp.component';
 import { BioIngComponent } from './bio-ing/bio-ing.component';
+import { ContatoComponent } from './contato/contato.component';
 
 
 @NgModule({
-    declarations: [HomeComponent, NavBarComponent, VideosComponent, BioComponent, BioEspComponent, BioIngComponent],
+    declarations: [HomeComponent, NavBarComponent, VideosComponent, BioComponent, BioEspComponent, BioIngComponent, ContatoComponent],
     exports: [
         NavBarComponent
     ],

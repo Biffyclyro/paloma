@@ -23,7 +23,7 @@ export class NavBarComponent implements OnInit {
     },
     {
       title: 'Contato',
-      route: 'dahpodhsaopd',
+      route: 'contato',
     }
   ];
 
