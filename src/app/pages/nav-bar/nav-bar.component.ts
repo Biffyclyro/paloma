@@ -10,7 +10,7 @@ export class NavBarComponent implements OnInit {
   links: {title: string, route: string} [] = [
     {
 
-      title: 'Página inicial',
+      title: 'Home',
       route: 'home'
     },
     {
@@ -18,11 +18,19 @@ export class NavBarComponent implements OnInit {
       route: 'bio'
     },
     {
-      title: 'Vídeos',
+      title: 'Videos',
       route: 'videos'
     },
     {
-      title: 'Contato',
+      title: 'Scores',
+      route: 'scores'
+    },
+    {
+      title: 'Press',
+      route: 'press'
+    },
+    {
+      title: 'Contact',
       route: 'contato',
     }
   ];
