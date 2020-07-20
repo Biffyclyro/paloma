@@ -1,4 +1,4 @@
-<br>
+<!--<br>
 <div>
   <p>Choro-Paloma Pitaya</p>
   <iframe width="100%" height="315" src="https://www.youtube.com/embed/88oFMYYygQk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -12,7 +12,21 @@
 <div>
   <p>Duo No. 1 para Violino e Contrabaixo de Wendell Rosa</p>
   <iframe width="560" height="315" src="https://www.youtube.com/embed/ASytPmj12B4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+</div>-->
+
+<ng-template ngFor let-video [ngForOf]="playList">
+  <br>
+  <div>
+    <p>{{video.snippet.title}}</p>
+
+    <iframe width="560" height="315"
+            [src]="video.snippet.resourceId.videoId"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+  </div>
+</ng-template>
+
 <br>
 <br>
 <br>
