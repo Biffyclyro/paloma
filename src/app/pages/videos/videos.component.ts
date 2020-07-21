@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {VideoService} from '../../services/video.service';
-import {map} from 'rxjs/operators';
-import {DomSanitizer} from '@angular/platform-browser';
+import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-videos',
@@ -9,34 +8,26 @@ import {DomSanitizer} from '@angular/platform-browser';
   styleUrls: ['./videos.component.css']
 })
 export class VideosComponent implements OnInit {
-  playList: item[];
+  playList: { title: string, url: SafeResourceUrl }[];
 
-  constructor(private videoService: VideoService, private sanitizer: DomSanitizer) { }
+  constructor(private videoService: VideoService,
+              private sanitizer: DomSanitizer) {
+  }
 
   ngOnInit() {
-    this.videoService.getPlayList().subscribe( (res: Retorno) => {
-       this.playList = res.items;
-       this.playList.forEach(i => i.snippet.resourceId
-           .videoId = `https://www.youtube.com/embed/${i.snippet.resourceId.videoId}`);
-       this.playList.forEach(i => console.log(i));
+    this.videoService.getPlayList().subscribe(res => {
+      this.playList = res.items.map(i => ({
+        title: i.snippet.title,
+        url: this.toSafeUrl(i.snippet.resourceId.videoId)
+      }));
     });
+  }
+
+  private toSafeUrl(id: string): SafeResourceUrl {
+    const url = 'https://www.youtube.com/embed/' + id;
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 
 }
 
-type Retorno = {
-  items: item[]
-};
 
-type item = {
-  snippet: snippet
-};
-
-type snippet = {
-  title: string,
-  resourceId: resource
-};
-
-type resource = {
-  videoId: string
-};
