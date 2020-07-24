@@ -9,7 +9,7 @@ import {ContatoComponent} from './contato/contato.component';
 
 
 const routes: Routes = [
-  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  {path: '', redirectTo: 'pages/home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   {path: 'videos', component: VideosComponent},
   {path: 'bio', component: BioComponent},

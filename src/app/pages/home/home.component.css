@@ -1,12 +1,13 @@
 
 .bg {
-  background-image: url("../../../assets/img/bg.jpeg");
+  background-image: url("../../../assets/img/bg_desk.jpeg");
   width: 100%;
+  height: auto;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100%;
   padding-left: 100%;
-  padding-top: 205%;
+  padding-top: 65%;
 }
 @media screen and (max-width: 576px) {
 

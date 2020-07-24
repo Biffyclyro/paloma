@@ -9,12 +9,14 @@ import { BioComponent } from './bio/bio.component';
 import { BioEspComponent } from './bio-esp/bio-esp.component';
 import { BioIngComponent } from './bio-ing/bio-ing.component';
 import { ContatoComponent } from './contato/contato.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
-    declarations: [HomeComponent, NavBarComponent, VideosComponent, BioComponent, BioEspComponent, BioIngComponent, ContatoComponent],
+    declarations: [HomeComponent, NavBarComponent, VideosComponent, BioComponent, BioEspComponent, BioIngComponent, ContatoComponent, FooterComponent],
     exports: [
-        NavBarComponent
+        NavBarComponent,
+        FooterComponent
     ],
     imports: [
         CommonModule,
