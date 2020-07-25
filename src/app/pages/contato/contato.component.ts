@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {ContactServiceService} from '../../core/services/contact-service.service';
+import {HttpErrorResponse} from '@angular/common/http';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-contato',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContatoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private contactService: ContactServiceService, private route: Router) { }
 
   ngOnInit() {
+  }
+
+  send() {
+    this.contactService.sendMessage().subscribe(() => {
+      },
+      err => {
+        console.log(err.status);
+        window.location.href = `https://http.cat/${err.status}`;
+      }
+    );
   }
 
 }

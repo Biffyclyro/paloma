@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {AbstractApiService} from './abstract-api.service';
-import {environment} from '../../environments/environment';
+import {environment} from '../../../environments/environment';
 import {Observable} from 'rxjs';
 
 @Injectable({
