@@ -10,6 +10,7 @@ import { BioEspComponent } from './bio-esp/bio-esp.component';
 import { BioIngComponent } from './bio-ing/bio-ing.component';
 import { ContatoComponent } from './contato/contato.component';
 import { FooterComponent } from './footer/footer.component';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { FooterComponent } from './footer/footer.component';
         FooterComponent
     ],
     imports: [
+        FormsModule,
         CommonModule,
         PagesRoutingModule
     ]
