@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {ContactServiceService} from '../../core/services/contact-service.service';
 import {HttpErrorResponse} from '@angular/common/http';
 import {Router} from '@angular/router';
@@ -11,52 +11,50 @@ import {NgForm} from '@angular/forms';
 })
 export class ContatoComponent implements OnInit {
 
-    public msg: Mensagem = { name: '', email: '', msg_text: ''};
-    public serverOn = false;
+  @ViewChild('closeModal') buttonElement: ElementRef;
+  public msg: Mensagem = { name: '', email: '', msg_text: ''};
+  public serverOn = false;
 
 
   constructor(private contactService: ContactServiceService, private route: Router) { }
 
   ngOnInit() {
-      this.contactService.wakeUpServer().subscribe(() =>{
-        console.log('carregou');
-        this.serverOn = true;
-      });
+    this.contactService.wakeUpServer().subscribe(() => {
+      console.log('carregou');
+      this.serverOn = true;
+    });
   }
 
 
-    send(f: NgForm) {
+  send(f: NgForm) {
 
-        this.contactService.wakeUpServer().subscribe(() =>{
+    this.contactService.wakeUpServer().subscribe(() => {
+      this.buttonElement.nativeElement.click();
+      window.alert('Mensagem enviada');
+      this.msg = { name: '', email: '', msg_text: ''};
+      f.resetForm();
 
-            const buttonElement: HTMLElement = document.querySelector('#closeModal') as HTMLElement;
-            buttonElement.click();
-            window.alert('Mensagem enviada');
-            f.resetForm();
-            this.msg = { name: '', email: '', msg_text: ''};
 
-        });
-    }
-      
-      /*
-    this.contactService.sendMessage(this.msg).subscribe(() => {
+    });
+
+   /* this.contactService.sendMessage(this.msg).subscribe(() => {
+        this.buttonElement.nativeElement.click();
         window.alert('Mensagem enviada');
-
+        this.msg = { name: '', email: '', msg_text: ''};
         f.resetForm();
       },
       err => {
         console.log(err.status);
-        //window.location.href = `https://http.cat/${err.status}`;
+        // window.location.href = `https://http.cat/${err.status}`;
       }
-    );
+    );*/
   }
 
-     */
 
 }
 
 export interface Mensagem {
-    name: string;
+  name: string;
     email: string;
     msg_text: string;
 }
