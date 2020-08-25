@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {ContactServiceService} from '../../core/services/contact-service.service';
 import {HttpErrorResponse} from '@angular/common/http';
 import {Router} from '@angular/router';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-contato',
@@ -10,17 +11,26 @@ import {Router} from '@angular/router';
 })
 export class ContatoComponent implements OnInit {
 
-  public msg: Mensagem = { name: '', email: '', msg_text: ''} 
+    public msg: Mensagem = { name: '', email: '', msg_text: ''} 
+    public serverOn = false;
+
+
   constructor(private contactService: ContactServiceService, private route: Router) { }
 
   ngOnInit() {
-      () => this.contactService.wakeUpServer();
+      this.contactService.wakeUpServer().subscribe(() =>{
+        console.log('carregou');
+        this.serverOn = true;
+      });
   }
 
 
-  send() {
+  send(f: NgForm) {
       console.log(this.msg);
     this.contactService.sendMessage(this.msg).subscribe(() => {
+        window.alert('Mensagem enviada');
+
+        f.resetForm();
       },
       err => {
         console.log(err.status);
@@ -28,6 +38,7 @@ export class ContatoComponent implements OnInit {
       }
     );
   }
+
 
 }
 

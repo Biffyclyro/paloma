@@ -9,8 +9,8 @@ import {Mensagem} from 'src/app/pages/contato/contato.component';
 export class ContactServiceService extends AbstractApiService{
   URL_API = 'https://paloma-contact.herokuapp.com';
 
-  public wakeUpServer(): void {
-      this.httpC.get(this.URL_API);
+  public wakeUpServer(): Observable<any>{
+      return this.httpC.get(this.URL_API);
   }
 
   public sendMessage(msg: Mensagem): Observable<Mensagem> {
