@@ -11,7 +11,7 @@ import {NgForm} from '@angular/forms';
 })
 export class ContatoComponent implements OnInit {
 
-    public msg: Mensagem = { name: '', email: '', msg_text: ''} 
+    public msg: Mensagem = { name: '', email: '', msg_text: ''};
     public serverOn = false;
 
 
@@ -25,8 +25,20 @@ export class ContatoComponent implements OnInit {
   }
 
 
-  send(f: NgForm) {
-      console.log(this.msg);
+    send(f: NgForm) {
+
+        this.contactService.wakeUpServer().subscribe(() =>{
+
+            const buttonElement: HTMLElement = document.querySelector('#closeModal') as HTMLElement;
+            buttonElement.click();
+            window.alert('Mensagem enviada');
+            f.resetForm();
+            this.msg = { name: '', email: '', msg_text: ''};
+
+        });
+    }
+      
+      /*
     this.contactService.sendMessage(this.msg).subscribe(() => {
         window.alert('Mensagem enviada');
 
@@ -39,6 +51,7 @@ export class ContatoComponent implements OnInit {
     );
   }
 
+     */
 
 }
 
