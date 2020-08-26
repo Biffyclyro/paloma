@@ -57,7 +57,7 @@
     </div>
 
     <ng-template [ngIf]="serverOn" [ngIfElse]="elseBlock">
-        <button (click)="send(formulario)" data-toggle="modal" data-target="#loadingModal" class="btn btn-success">Send</button>
+        <button (click)="send(formulario)" data-toggle="modal" data-backdrop="static"  data-target="#loadingModal" class="btn btn-success">Send</button>
     </ng-template>
 
     <ng-template #elseBlock>
@@ -74,16 +74,15 @@
 <br>
 <br>
 
+
 <div class="modal fade " id="loadingModal" aria-hidden="true" tabindex="-1" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-content modal-dialog d-flex justify-content-center" style=" height: 100Vh">
-        <div id="loading" class="align-self-center "></div>
-      </div>
+    <div class="modal-dialog">
+        <div class=" d-flex justify-content-center" style=" height: 100Vh" >
+            <div id="loading" class="align-self-center "></div>
+        </div>
 
-      <button #closeModal type="button" class="close" data-dismiss="modal" hidden></button>
     </div>
-  </div>
 
+        <button #closeModal type="button" class="close" data-dismiss="modal" onclick="console.log('clicou')"> TESTE</button>
 </div>
 

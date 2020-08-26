@@ -27,13 +27,13 @@ export class ContatoComponent implements OnInit {
 
 
   send(f: NgForm) {
-
+    
     this.contactService.wakeUpServer().subscribe(() => {
-      this.buttonElement.nativeElement.click();
-      window.alert('Mensagem enviada');
+
       this.msg = { name: '', email: '', msg_text: ''};
       f.resetForm();
 
+        this.closeModal();
 
     });
 
@@ -49,6 +49,9 @@ export class ContatoComponent implements OnInit {
       }
     );*/
   }
+    closeModal(): void {
+        setTimeout(this.buttonElement.nativeElement.click, 2000);
+    }
 
 
 }
