@@ -12,6 +12,7 @@ import {NgForm} from '@angular/forms';
 export class ContatoComponent implements OnInit {
 
   @ViewChild('closeModal') buttonElement: ElementRef;
+  @ViewChild('openModal') openButtonElement: ElementRef;
   public msg: Mensagem = { name: '', email: '', msg_text: ''};
   public serverOn = false;
 
@@ -26,33 +27,38 @@ export class ContatoComponent implements OnInit {
   }
 
 
-  send(f: NgForm) {
-    
-    this.contactService.wakeUpServer().subscribe(() => {
+    send(f: NgForm) {
+        this.openButtonElement.nativeElement.click();
 
-      this.msg = { name: '', email: '', msg_text: ''};
-      f.resetForm();
+        const closeModal = () => {
+            this.buttonElement.nativeElement.click();
+        }
 
-        this.closeModal();
+/*
 
-    });
+        this.contactService.wakeUpServer().subscribe(() => {
 
-   /* this.contactService.sendMessage(this.msg).subscribe(() => {
-        this.buttonElement.nativeElement.click();
-        window.alert('Mensagem enviada');
-        this.msg = { name: '', email: '', msg_text: ''};
-        f.resetForm();
-      },
-      err => {
-        console.log(err.status);
-        // window.location.href = `https://http.cat/${err.status}`;
-      }
-    );*/
+            window.alert('Mensagem enviada');
+            this.msg = { name: '', email: '', msg_text: ''};
+            f.resetForm();
+
+            setTimeout(closeModal, 1000);
+
+        });
+*/
+        this.contactService.sendMessage(this.msg).subscribe(() => {
+            window.alert('Mensagem enviada');
+            this.msg = { name: '', email: '', msg_text: ''};
+            f.resetForm();
+
+            setTimeout(closeModal, 1000);
+        },
+            err => {
+                console.log(err.status);
+                // window.location.href = `https://http.cat/${err.status}`;
+            }
+        ); 
   }
-    closeModal(): void {
-        setTimeout(this.buttonElement.nativeElement.click, 2000);
-    }
-
 
 }
 
