@@ -1,7 +1,10 @@
 body {
   position: relative;
   min-height: 166vh;
+  overflow-x: hidden;
+
 }
+
 
 #loading {
   display: inline-block;
