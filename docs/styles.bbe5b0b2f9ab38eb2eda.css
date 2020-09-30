@@ -1,4 +1,4 @@
-body{position:relative;min-height:166vh}#loading{display:inline-block;width:80px;height:80px;border-radius:50%;border:5px solid hsla(0,0%,100%,.3);border-top-color:#fff;animation:spin 1s ease-in-out infinite;-webkit-animation:spin 1s ease-in-out infinite}@keyframes spin{to{-webkit-transform:rotate(1turn)}}@-webkit-keyframes spin{to{-webkit-transform:rotate(1turn)}}
+body{position:relative;min-height:166vh;overflow-x:hidden}@media screen and (max-width:576px){body{position:relative;min-height:190vh;overflow-x:hidden}}#loading{display:inline-block;width:80px;height:80px;border-radius:50%;border:5px solid hsla(0,0%,100%,.3);border-top-color:#fff;animation:spin 1s ease-in-out infinite;-webkit-animation:spin 1s ease-in-out infinite}@keyframes spin{to{-webkit-transform:rotate(1turn)}}@-webkit-keyframes spin{to{-webkit-transform:rotate(1turn)}}
 
 /*!
  * Bootstrap v4.5.2 (https://getbootstrap.com/)

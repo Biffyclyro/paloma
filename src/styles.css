@@ -6,6 +6,19 @@ body {
 }
 
 
+@media screen and (max-width: 576px) {
+  body {
+    position: relative;
+    min-height: 190vh;
+    overflow-x: hidden;
+
+  }
+
+}
+
+
+
+
 #loading {
   display: inline-block;
   width: 80px;

@@ -21,6 +21,7 @@ export class NavBarComponent implements OnInit {
       title: 'Videos',
       route: 'videos'
     },
+    /*
     {
       title: 'Scores',
       route: 'scores'
@@ -29,6 +30,7 @@ export class NavBarComponent implements OnInit {
       title: 'Press',
       route: 'press'
     },
+    */
     {
       title: 'Contact',
       route: 'contato',
