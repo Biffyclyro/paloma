@@ -6,6 +6,7 @@ import {BioComponent} from './bio/bio.component';
 import {BioEspComponent} from './bio-esp/bio-esp.component';
 import {BioIngComponent} from './bio-ing/bio-ing.component';
 import {ContatoComponent} from './contato/contato.component';
+import {PressComponent} from './press/press.component';
 
 
 const routes: Routes = [
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path: 'bio', component: BioComponent},
   {path: 'bioEsp', component: BioEspComponent},
   {path: 'bioIng', component: BioIngComponent},
-  {path: 'contato', component: ContatoComponent}
+  {path: 'contato', component: ContatoComponent},
+  {path: 'press', component: PressComponent}
 ];
 
 @NgModule({

@@ -25,12 +25,11 @@ export class NavBarComponent implements OnInit {
     {
       title: 'Scores',
       route: 'scores'
-    },
+    }, */
     {
       title: 'Press',
       route: 'press'
     },
-    */
     {
       title: 'Contact',
       route: 'contato',

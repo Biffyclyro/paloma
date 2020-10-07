@@ -11,10 +11,21 @@ import { BioIngComponent } from './bio-ing/bio-ing.component';
 import { ContatoComponent } from './contato/contato.component';
 import { FooterComponent } from './footer/footer.component';
 import {FormsModule} from '@angular/forms';
+import { PressComponent } from './press/press.component';
 
 
 @NgModule({
-    declarations: [HomeComponent, NavBarComponent, VideosComponent, BioComponent, BioEspComponent, BioIngComponent, ContatoComponent, FooterComponent],
+    declarations: [
+      HomeComponent,
+      NavBarComponent,
+      VideosComponent,
+      BioComponent,
+      BioEspComponent,
+      BioIngComponent,
+      ContatoComponent,
+      FooterComponent,
+      PressComponent
+    ],
     exports: [
         NavBarComponent,
         FooterComponent
