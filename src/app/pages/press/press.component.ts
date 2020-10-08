@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import {PressService, Img} from '../../core/services/press.service';
+import {PressService, Img, Dado} from '../../core/services/press.service';
+import {DtoData} from 'src/app/app.module';
 
 @Component({
   selector: 'app-press',
@@ -13,7 +14,7 @@ export class PressComponent implements OnInit {
   constructor(private pressService: PressService) { }
 
   ngOnInit(): void {
-    this.pressService.getPress().subscribe(response => {
+    this.pressService.getPress().subscribe((response: DtoData<Dado>) => {
       this.images = response.data.images;
     });
   }

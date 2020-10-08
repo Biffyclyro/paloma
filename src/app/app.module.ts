@@ -23,3 +23,7 @@ import {HttpClientModule} from '@angular/common/http';
 })
 export class AppModule {
 }
+
+export interface DtoData<T> {
+  data: T;
+}
