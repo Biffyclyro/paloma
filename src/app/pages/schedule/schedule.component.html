@@ -1,0 +1,14 @@
+
+<br>
+<br>
+<br>
+<div *ngFor="let scheduleItem of schedule"
+  class="container"
+  >
+  <h2>{{scheduleItem.summary}}</h2>
+  <p><b>Dia: {{scheduleItem.start.getDay()}}/{{scheduleItem.start.getMonth()}}/{{scheduleItem.start.getFullYear()}}</b></p>
+  <p><b>Hora: {{scheduleItem.start.getHours()}}: {{scheduleItem.start.getMinutes()}}</b></p>
+  <p><b>Local: {{scheduleItem.description}}</b></p>
+
+
+</div>

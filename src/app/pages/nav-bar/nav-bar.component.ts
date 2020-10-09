@@ -27,6 +27,10 @@ export class NavBarComponent implements OnInit {
       route: 'scores'
     }, */
     {
+      title: 'Schedule',
+      route: 'schedule'
+    },
+    {
       title: 'Press',
       route: 'press'
     },

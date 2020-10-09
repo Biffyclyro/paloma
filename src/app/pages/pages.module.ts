@@ -12,6 +12,7 @@ import { ContatoComponent } from './contato/contato.component';
 import { FooterComponent } from './footer/footer.component';
 import {FormsModule} from '@angular/forms';
 import { PressComponent } from './press/press.component';
+import { ScheduleComponent } from './schedule/schedule.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { PressComponent } from './press/press.component';
       BioIngComponent,
       ContatoComponent,
       FooterComponent,
-      PressComponent
+      PressComponent,
+      ScheduleComponent
     ],
     exports: [
         NavBarComponent,

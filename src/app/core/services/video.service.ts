@@ -8,7 +8,7 @@ import {Observable} from 'rxjs';
 })
 export class VideoService extends AbstractApiService {
   protected readonly playListId = 'PLcw6bO94_u6OZPTGEhH42qNW-l5cLzUjP';
-  protected readonly apiKey = 'AIzaSyAi9QFDAcF9nSlkkHckqxYLdlpJ5W_HozY';
+  protected readonly apiKey = 'AIzaSyB3jdF-TIVyarrq1tdSA1pVutygdSJA9TU';
   protected readonly youYubeApi: string = environment.youTubeApi;
   protected readonly API_URL = `${this.youYubeApi}${this.playListId}&key=${this.apiKey}&maxResults=50`;
 
