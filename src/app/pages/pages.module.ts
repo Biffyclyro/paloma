@@ -13,6 +13,7 @@ import { FooterComponent } from './footer/footer.component';
 import {FormsModule} from '@angular/forms';
 import { PressComponent } from './press/press.component';
 import { ScheduleComponent } from './schedule/schedule.component';
+import { ScoresComponent } from './scores/scores.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { ScheduleComponent } from './schedule/schedule.component';
       ContatoComponent,
       FooterComponent,
       PressComponent,
-      ScheduleComponent
+      ScheduleComponent,
+      ScoresComponent
     ],
     exports: [
         NavBarComponent,

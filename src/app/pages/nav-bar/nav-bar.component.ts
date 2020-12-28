@@ -21,11 +21,10 @@ export class NavBarComponent implements OnInit {
       title: 'Videos',
       route: 'videos'
     },
-    /*
     {
       title: 'Scores',
       route: 'scores'
-    }, */
+    },
     {
       title: 'Schedule',
       route: 'schedule'

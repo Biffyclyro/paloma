@@ -8,6 +8,7 @@ import {BioIngComponent} from './bio-ing/bio-ing.component';
 import {ContatoComponent} from './contato/contato.component';
 import {PressComponent} from './press/press.component';
 import {ScheduleComponent} from './schedule/schedule.component';
+import {ScoresComponent} from './scores/scores.component';
 
 
 const routes: Routes = [
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path: 'bioIng', component: BioIngComponent},
   {path: 'contato', component: ContatoComponent},
   {path: 'press', component: PressComponent},
-  {path: 'schedule', component: ScheduleComponent}
+  {path: 'schedule', component: ScheduleComponent},
+  {path: 'scores', component: ScoresComponent}
 ];
 
 @NgModule({
