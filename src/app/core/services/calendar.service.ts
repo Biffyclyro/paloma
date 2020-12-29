@@ -15,6 +15,7 @@ export class CalendarService extends AbstractApiService{
   public getSchedule(): Observable<CalendarResponse<ScheduleItem>> {
     return this.httpC.get<CalendarResponse<ScheduleItem>>(this.API_URL).pipe(map(resp =>{
       resp.items.forEach(i => {
+
         i.start = new Date((i.start as any).dateTime);
       });
       return resp;

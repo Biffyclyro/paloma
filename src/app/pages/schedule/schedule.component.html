@@ -6,8 +6,8 @@
   class="container"
   >
   <h2>{{scheduleItem.summary}}</h2>
-  <p><b>Dia: {{scheduleItem.start.getDay()}}/{{scheduleItem.start.getMonth()}}/{{scheduleItem.start.getFullYear()}}</b></p>
-  <p><b>Hora: {{scheduleItem.start.getHours()}}: {{scheduleItem.start.getMinutes()}}</b></p>
+  <p><b>Dia: {{ scheduleItem.start.toLocaleDateString('pt-BR')}}</b></p>
+  <p><b>Hora: {{scheduleItem.start.toLocaleTimeString('pt-BR')}}</b></p>
   <p><b>Local: {{scheduleItem.description}}</b></p>
 
 

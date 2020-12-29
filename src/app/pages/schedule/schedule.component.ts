@@ -14,6 +14,7 @@ export class ScheduleComponent implements OnInit {
   ngOnInit(): void {
     this.calendarSvc.getSchedule().subscribe((response: CalendarResponse<ScheduleItem>) => {
       this.schedule = response.items;
+
     });
 
   }
