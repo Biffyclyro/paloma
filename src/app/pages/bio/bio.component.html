@@ -1,17 +1,47 @@
-<div class="conteudo">
+<div #port class="conteudo"  >
   <br>
   <br>
-  <a routerLink="/pages/bioIng" class="btn btn-success">Inglês</a>
+  <button class="btn btn-success" (click)="switchBio('ing', 'port')"> Ingles</button>
+  <button class="btn btn-success" (click)="switchBio('esp', 'port')"> Espanhol </button>
+  <!--<a routerLink="/pages/bioIng" class="btn btn-success">Inglês</a>
   <a routerLink="/pages/bioEsp" class="btn btn-success">Espanhol</a>
+  -->
   <br>
   <br>
   <br>
-  <p class="col-12">
-  Paloma Pitaya (1994) é o nome artístico de Paloma Silveira Rossatto, violinista e compositora brasileira. Iniciou seus estudos de música no Orfeó la Lira, em Barcelona. É graduada pela Universidade Federal de Santa Maria, Brasil, sob a orientação de Yara Vieira. Frequentou aulas com o professor Marcelo Guerchfeld, em Porto Alegre. Participou de vários festivais de música no Brasil, Espanha e Itália, participando de masterclasses e tocando ao lado de grandes músicos de todo o mundo. Venceu algumas competições que lhe deram oportunidades muito enriquecedoras, como uma intercâmbio com a Universidade da Geórgia, Estados Unidos, e concertos como solista. Há realizado um mestrado em performance na Academia internacional Galamian, sob a orientação dos professores Jesús Reina e Anna Nilsen em Málaga, Espanha, na temporada 2018-19. Profissionalmente, integrou orquestras e grupos de câmara no Brasil e na Alemanha. Também atuou como professora e concertista. Como compositora, em 2018 estreiou uma peça no Festival Ilumina, São Paulo, e em 2019 fez a trilha sonora do curta “Resista”, de Plano9Filmes, em Porto Alegre. Selecionada pela Fundación Antonio Gala para Jóvenes Creadores, de Córdoba, Espanha, como uma das catorze vencedoras para a residência artística da XVIII edição, compôs um livro com 13 caprichos brasileiros para violino solo chamado Caprichoso Brasil. A compositora propõe uma ponte entre a música tradicional brasileira e o cânone clássico de obras para violino solo, utilizando o instrumento de maneira inovadora, valorizando a riqueza rítmica e a expressão cultural de seu país através da linguagem do violino.
-  </p>
+  <p class="col-12"> {{bioDto.port}}  </p>
 
   <br>
   <br>
 </div>
+<div #esp class="conteudo" hidden >
+  <br>
+  <br>
+  <button class="btn btn-success" (click)="switchBio('ing', 'esp')"> Ingles</button>
+  <button class="btn btn-success" (click)="switchBio('port', 'esp')"> Português </button>
+  <br>
+  <br>
+  <br>
+  <p class="col-12"> {{bioDto.esp}}  </p>
+
+  <br>
+  <br>
+</div>
+<div #ing class="conteudo" hidden >
+  <br>
+  <br>
+  <button class="btn btn-success" (click)="switchBio('esp', 'ing')"> Espanhol </button>
+  <button class="btn btn-success" (click)="switchBio('port', 'ing')"> Português </button>
+  <br>
+  <br>
+  <br>
+  <p class="col-12"> {{bioDto.ing}}  </p>
+
+  <br>
+  <br>
+</div>
+
+
+
 
 
